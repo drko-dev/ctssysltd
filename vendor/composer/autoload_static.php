@@ -29,6 +29,7 @@ class ComposerStaticInit9bf39cc7dce826f92ad7ab78651edaa1
             'Symfony\\Component\\Config\\' => 25,
             'Symfony\\Component\\Cache\\' => 24,
             'Symfony\\Bundle\\FrameworkBundle\\' => 31,
+            'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
         ),
         'P' => 
         array (
@@ -36,6 +37,17 @@ class ComposerStaticInit9bf39cc7dce826f92ad7ab78651edaa1
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
+        ),
+        'D' => 
+        array (
+            'Doctrine\\Common\\Inflector\\' => 26,
+            'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Common\\Annotations\\' => 28,
+            'Doctrine\\Common\\' => 16,
+        ),
+        'C' => 
+        array (
+            'Composer\\CaBundle\\' => 18,
         ),
         'A' => 
         array (
@@ -109,6 +121,10 @@ class ComposerStaticInit9bf39cc7dce826f92ad7ab78651edaa1
         array (
             0 => __DIR__ . '/..' . '/symfony/framework-bundle',
         ),
+        'Sensio\\Bundle\\FrameworkExtraBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sensio/framework-extra-bundle',
+        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -125,6 +141,26 @@ class ComposerStaticInit9bf39cc7dce826f92ad7ab78651edaa1
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
+        'Doctrine\\Common\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
+        'Doctrine\\Common\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
+        'Doctrine\\Common\\Annotations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
+        ),
+        'Doctrine\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+        ),
+        'Composer\\CaBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
+        ),
         'App\\Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
@@ -135,11 +171,33 @@ class ComposerStaticInit9bf39cc7dce826f92ad7ab78651edaa1
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'SensioLabs\\Security' => 
+            array (
+                0 => __DIR__ . '/..' . '/sensiolabs/security-checker',
+            ),
+        ),
+        'D' => 
+        array (
+            'Doctrine\\Common\\Lexer\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
+            ),
+            'Doctrine\\Common\\Collections\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/collections/lib',
+            ),
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit9bf39cc7dce826f92ad7ab78651edaa1::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit9bf39cc7dce826f92ad7ab78651edaa1::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit9bf39cc7dce826f92ad7ab78651edaa1::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }
